@@ -1,0 +1,37 @@
+{
+	"name": "razorpreact",
+	"version": "1.0.0",
+	"type": "module",
+	"devDependencies": {
+		"@tailwindcss/forms": "^0.5.10",
+		"autoprefixer": "^10.4.21",
+		"concurrently": "^9.1.2",
+		"esbuild": "^0.25.1",
+		"lit": "^3.2.1",
+		"nodemon": "^3.1.0",
+		"postcss": "^8.5.3",
+		"postcss-cli": "^11.0.1",
+		"tailwindcss": "^4.0.17"
+	},
+	"dependencies": {
+		"@tailwindcss/postcss": "^4.0.17",
+		"i": "^0.3.7",
+		"npm": "^11.2.0",
+		"postcss-cli": "^11.0.1",
+		"preact": "^10.26.4",
+		"preact-router": "^4.1.2",
+		"typescript": "^5.8.2"
+	},
+	"scripts": {
+		"build": "npm run build:ts && npm run build:css",
+		"build:ts": "npx esbuild './Pages/**/*.tsx' './Components/**/*.tsx' --bundle --outdir=wwwroot/js/dist --sourcemap --jsx=automatic",
+		"build:css": "postcss styles/app.css -o wwwroot/css/app.min.css",
+		"watch": "concurrently -n TS,CSS,DOTNET -c green,cyan,blue \"npm:watch:ts\" \"npm:watch:css\" \"npm:dotnet:watch\"",
+		"watch:ts": "esbuild './Pages/**/*.tsx' './Components/**/*.tsx' --bundle --outdir=wwwroot/js/dist --sourcemap --watch --jsx=automatic",
+		"watch:css": "postcss styles/app.css -o wwwroot/css/app.min.css --watch",
+		"dotnet:watch": "dotnet watch run",
+		"new-component": "node scripts/newPage.js"
+	},
+	"author": "",
+	"license": "ISC"
+}

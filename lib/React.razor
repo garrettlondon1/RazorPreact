@@ -1,0 +1,7 @@
+@code { 
+    [Parameter, EditorRequired] public required string Component { get; set; } 
+	public Guid Id { get; set; } = Guid.NewGuid();
+}
+
+<script type="module" src=@($"js/dist/{Component}.js?v={Id}")></script>
+<div id="@Component"></div>

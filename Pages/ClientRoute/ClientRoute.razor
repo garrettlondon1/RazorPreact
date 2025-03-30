@@ -1,0 +1,8 @@
+@page "/clientroute"
+@page "/clientroute/{Tab}"
+
+<React Component="@(typeof(ClientRoute).ScriptName())" />
+
+@code {
+	[Parameter] public string Tab { get; set; }
+}

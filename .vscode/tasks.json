@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run",
+            "command": "cd",
+            "type": "shell",
+            "group": "build",
+            "args": ["${workspaceFolder}", "&&", "npm", "run", "watch"]
+        },
+        {
+            "label": "Create Component",
+            "command": "cd",
+            "type": "shell",
+            "group": "build",
+            "args": ["${workspaceFolder}", "&&", "npm", "run", "new-component", "${input:componentName}"],
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "componentName",
+            "description": "Component Name",
+            "default": "Dashboard/MyComponent"
+        }
+    ]
+}

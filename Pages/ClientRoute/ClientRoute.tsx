@@ -11,7 +11,7 @@ const Tab1 = () => {
 				{/* Stats Card */}
 				<div className="bg-white overflow-hidden shadow rounded-lg">
 					<div className="px-4 py-5 sm:p-6">
-						<dt className="text-sm font-medium text-gray-500 truncate">Total Users</dt>
+						<dt className="text-sm font-medium text-gray-500 truncate">Total Tests</dt>
 						<dd className="mt-1 text-3xl font-semibold text-gray-900">12,345</dd>
 					</div>
 				</div>
@@ -19,16 +19,16 @@ const Tab1 = () => {
 				{/* Stats Card */}
 				<div className="bg-white overflow-hidden shadow rounded-lg">
 					<div className="px-4 py-5 sm:p-6">
-						<dt className="text-sm font-medium text-gray-500 truncate">Revenue</dt>
-						<dd className="mt-1 text-3xl font-semibold text-gray-900">$45,678</dd>
+						<dt className="text-sm font-medium text-gray-500 truncate">Test Passed</dt>
+						<dd className="mt-1 text-3xl font-semibold text-gray-900">12,345</dd>
 					</div>
 				</div>
 
 				{/* Stats Card */}
 				<div className="bg-white overflow-hidden shadow rounded-lg">
 					<div className="px-4 py-5 sm:p-6">
-						<dt className="text-sm font-medium text-gray-500 truncate">Conversion Rate</dt>
-						<dd className="mt-1 text-3xl font-semibold text-gray-900">24.57%</dd>
+						<dt className="text-sm font-medium text-gray-500 truncate">Test Failed</dt>
+						<dd className="mt-1 text-3xl font-semibold text-gray-900">12,345</dd>
 					</div>
 				</div>
 			</div>
@@ -58,7 +58,7 @@ const Tab2 = () => {
 				{/* Stats Card */}
 				<div className="bg-white overflow-hidden shadow rounded-lg">
 					<div className="px-4 py-5 sm:p-6">
-						<dt className="text-sm font-medium text-gray-500 truncate">Projects</dt>
+						<dt className="text-sm font-medium text-gray-500 truncate">Tasks</dt>
 						<dd className="mt-1 text-3xl font-semibold text-gray-900">89</dd>
 					</div>
 				</div>

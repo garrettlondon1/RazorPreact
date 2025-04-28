@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"type": "module",
 	"devDependencies": {
+		"@hey-api/openapi-ts": "^0.66.7",
 		"@tailwindcss/forms": "^0.5.10",
 		"autoprefixer": "^10.4.21",
 		"concurrently": "^9.1.2",
@@ -14,6 +15,7 @@
 		"tailwindcss": "^4.0.17"
 	},
 	"dependencies": {
+		"@hey-api/client-fetch": "^0.10.0",
 		"@tailwindcss/postcss": "^4.0.17",
 		"i": "^0.3.7",
 		"npm": "^11.2.0",
@@ -24,12 +26,13 @@
 	},
 	"scripts": {
 		"build": "npm run build:ts && npm run build:css",
-		"build:ts": "npx esbuild './Pages/**/*.tsx' './Components/**/*.tsx' --bundle --outdir=wwwroot/js/dist --sourcemap --jsx=automatic",
+		"build:ts": "node esbuild.js",
 		"build:css": "postcss styles/app.css -o wwwroot/css/app.min.css",
 		"watch": "concurrently -n TS,CSS,DOTNET -c green,cyan,blue \"npm:watch:ts\" \"npm:watch:css\" \"npm:dotnet:watch\"",
-		"watch:ts": "esbuild './Pages/**/*.tsx' './Components/**/*.tsx' --bundle --outdir=wwwroot/js/dist --sourcemap --watch --jsx=automatic",
+		"watch:ts": "node esbuild.js --watch",
 		"watch:css": "postcss styles/app.css -o wwwroot/css/app.min.css --watch",
 		"dotnet:watch": "dotnet watch run",
+		"generate-api": "npx @hey-api/openapi-ts -i http://localhost:7006/swagger/v1/swagger.json -o lib/api -c @hey-api/client-fetch",
 		"new-component": "node scripts/newPage.js"
 	},
 	"author": "",

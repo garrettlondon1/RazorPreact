@@ -3,17 +3,21 @@
     "tasks": [
         {
             "label": "Run",
-            "command": "cd",
+            "command": "npm run watch",
             "type": "shell",
             "group": "build",
-            "args": ["${workspaceFolder}", "&&", "npm", "run", "watch"]
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
         },
         {
             "label": "Create Component",
-            "command": "cd",
+            "command": "npm run new-component ${input:componentName}",
             "type": "shell",
             "group": "build",
-            "args": ["${workspaceFolder}", "&&", "npm", "run", "new-component", "${input:componentName}"],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         }
     ],
